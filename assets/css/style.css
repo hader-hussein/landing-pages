@@ -137,6 +137,11 @@ a:hover,a{
      margin-top: 8px;
      cursor: pointer;
    }
+   .btn:hover{
+    background-image: linear-gradient(to right, var(--color-log), var(--color-back));
+    transform: rotate(360deg);
+  transform: scale(1.01);
+   }
    .form-control{
      display: block;
     width: 93%;
@@ -160,8 +165,31 @@ a:hover,a{
    }
    .component-content .img-logo{
     width:150px;
-
+    max-height: 100px;
+    height: auto;
+	animation: movdown 1s linear 1;
+	animation-delay: 0.2s;
+	animation-fill-mode: forwards;
+	visibility: hidden;
    }
+   @keyframes movdown {
+    0%{
+        transform: translateY(-100px);
+        visibility: visible;
+        -webkit-transform:translateY(-100px);
+        -moz-transform:translateY(-100px);
+        -ms-transform:translateY(-100px);
+        -o-transform:translateY(-100px);
+    }
+    100%{
+        transform: translateY(0);
+        visibility: visible;
+        -webkit-transform:translateY(0);
+        -moz-transform:translateY(0);
+        -ms-transform:translateY(0);
+        -o-transform:translateY(0);
+    }
+     }
    .component-content h1,.component-content h4,.component-content p{
     color: var(--color-white);
    }
@@ -320,7 +348,7 @@ width: 100px;
 }
 .component-content-why .item-choose img{
   width: 100%;
-  object-fit: cover;
+ border-radius: 16px;
   height: 145px;
 }
 .component-content-why .item-choose:nth-child(1){
@@ -434,8 +462,8 @@ position: relative;
  }
  .icon{
   width: 64px;
-  height: 64px;
-  object-fit: cover;
+height: auto;
+  
  }
  .content-solut{
   display: grid;
